@@ -6,13 +6,14 @@ class GroupsController < ApplicationController
   def new
     @group = Group.new
   end
-  
+
   def index
     @groups = Group.all
   end
 
   def show
     @group = Group.find(params[:id])
+    @posts = @group.posts
   end
 
   def edit
